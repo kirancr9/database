@@ -48,7 +48,6 @@ public class NewPostActivity extends BaseActivity {
         mlocationTxt = (EditText) findViewById(R.id.location_txt);
         mSerialTxt = (EditText) findViewById(R.id.serial_txt);
         mSubmitButton = (FloatingActionButton) findViewById(R.id.fab_submit_post);
-
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

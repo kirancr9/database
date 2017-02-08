@@ -62,13 +62,13 @@ public class PostDetailActivity extends BaseActivity {
                 // Get Equipment object and use the values to update the UI
 
 
-                Equipment equipment = dataSnapshot.getValue(Equipment.class);
+                Equipment post = dataSnapshot.getValue(Equipment.class);
                 // [START_EXCLUDE]
 
                 if(dataSnapshot.exists()) {
-                    mAuthorView.setText(equipment.author);
-                    mTitleView.setText(equipment.title);
-                    mBodyView.setText(equipment.body);
+                    mAuthorView.setText(post.author);
+                    mTitleView.setText(post.title);
+                    mBodyView.setText(post.body);
                 }
                 else{
                     finish();

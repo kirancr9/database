@@ -5,6 +5,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.cs.database.R;
+import com.google.firebase.cs.database.models.Equipment;
+
+import static com.google.firebase.cs.database.R.id.post_body;
 
 public class PostViewHolder extends RecyclerView.ViewHolder {
 
@@ -17,7 +20,17 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
 
         titleView = (TextView) itemView.findViewById(R.id.post_title);
         authorView = (TextView) itemView.findViewById(R.id.post_author);
-        bodyView = (TextView) itemView.findViewById(R.id.post_body);
+        bodyView = (TextView) itemView.findViewById(post_body);
+
+    }
+
+    public void bindToPost(Equipment post, View.OnClickListener starClickListener) {
+        titleView.setText(post.title);
+        authorView.setText(post.author);
+
+        bodyView.setText(post.body);
+
+
     }
 
 }

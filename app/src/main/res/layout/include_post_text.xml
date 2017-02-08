@@ -18,11 +18,9 @@
 
     <TextView
         android:id="@+id/post_body"
-        android:layout_width="143dp"
-        android:layout_height="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        tools:text="@string/lorem"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:layout_weight="0.01" />
+        tools:text="@string/lorem" />
 
 </LinearLayout>
