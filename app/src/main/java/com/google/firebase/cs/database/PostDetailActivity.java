@@ -1,5 +1,6 @@
 package com.google.firebase.cs.database;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,11 +26,14 @@ public class PostDetailActivity extends BaseActivity {
     private TextView mAuthorView;
     private TextView mTitleView;
     private TextView mBodyView;
+    private TextView demoTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
+
+
 
         // Get post key from intent
         mPostKey = getIntent().getStringExtra(EXTRA_POST_KEY);
@@ -45,7 +49,7 @@ public class PostDetailActivity extends BaseActivity {
         mAuthorView = (TextView) findViewById(R.id.post_author);
         mTitleView = (TextView) findViewById(R.id.post_title);
         mBodyView = (TextView) findViewById(R.id.post_body);
-
+        demoTxt = (TextView) findViewById(R.id.post_location);
 
 
     }
@@ -53,6 +57,7 @@ public class PostDetailActivity extends BaseActivity {
     @Override
     public void onStart() {
         super.onStart();
+
 
         // Add value event listener to the post
         // [START post_value_event_listener]
@@ -69,6 +74,7 @@ public class PostDetailActivity extends BaseActivity {
                     mAuthorView.setText(post.author);
                     mTitleView.setText(post.title);
                     mBodyView.setText(post.body);
+                    demoTxt.setText(post.location);
                 }
                 else{
                     finish();
@@ -100,6 +106,18 @@ public class PostDetailActivity extends BaseActivity {
     }
 
 
+
+    public void openupdate(View v) {
+
+        final String keyPost =mPostKey;
+
+        Intent intent = new Intent(getBaseContext(), UpdateActivity.class);
+        intent.putExtra(UpdateActivity.POST_KEY, keyPost);
+        startActivity(intent);
+    }
+
+
+
     @Override
     public void onStop() {
         super.onStop();
@@ -111,6 +129,7 @@ public class PostDetailActivity extends BaseActivity {
 
         // Clean up comments listener
     }
+
 
 
 

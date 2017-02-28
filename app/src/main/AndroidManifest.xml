@@ -3,32 +3,37 @@
     package="com.google.firebase.cs.database">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".CertBase"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name="com.google.firebase.cs.database.CertBase">
-
+        android:theme="@style/AppTheme">
         <activity
-            android:name="com.google.firebase.cs.database.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.google.firebase.cs.database.NewPostActivity" />
-        <activity android:name="com.google.firebase.cs.database.SignInActivity">
+        <activity android:name=".NewPostActivity" />
+        <activity android:name=".SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.google.firebase.cs.database.PostDetailActivity" />
+        <activity android:name=".PostDetailActivity" />
         <activity
-            android:name="com.google.firebase.cs.database.DrawerActivity"
+            android:name=".DrawerActivity"
             android:label="@string/title_activity_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UpdateActivity"
+            android:label="@string/title_activity_update"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".reportGen" />
     </application>
 
 </manifest>

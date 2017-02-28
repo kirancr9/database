@@ -14,6 +14,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
     public TextView titleView;
     public TextView authorView;
     public TextView bodyView;
+    public TextView demoView;
 
     public PostViewHolder(View itemView) {
         super(itemView);
@@ -21,15 +22,15 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
         titleView = (TextView) itemView.findViewById(R.id.post_title);
         authorView = (TextView) itemView.findViewById(R.id.post_author);
         bodyView = (TextView) itemView.findViewById(post_body);
+        demoView = (TextView) itemView.findViewById(R.id.post_location);
 
     }
 
     public void bindToPost(Equipment post, View.OnClickListener starClickListener) {
         titleView.setText(post.title);
         authorView.setText(post.author);
-
         bodyView.setText(post.body);
-
+        demoView.setText(post.location);
 
     }
 

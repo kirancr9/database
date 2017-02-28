@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -44,6 +47,8 @@ public class DrawerActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+
 
     public void magic(View v){
         startActivity(new Intent(DrawerActivity.this, MainActivity.class));
@@ -90,6 +95,9 @@ public class DrawerActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
 
         } else if (id == R.id.nav_cert) {
+            Intent i = new Intent(DrawerActivity.this, reportGen.class);
+            startActivity(i);
+            finish();
 
         } else if (id == R.id.nav_equip) {
             Intent i = new Intent(DrawerActivity.this, MainActivity.class);

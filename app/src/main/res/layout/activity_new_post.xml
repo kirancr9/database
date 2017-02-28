@@ -5,30 +5,306 @@
     android:layout_height="match_parent"
     tools:context="com.google.firebase.cs.database.NewPostActivity">
 
-    <EditText
-        android:id="@+id/field_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:hint="Equipment Name"
-        android:maxLines="1" />
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true">
 
-    <EditText
-        android:id="@+id/field_body"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/field_title"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="5dp"
-        android:hint="Equipment Model"
-        android:inputType="textMultiLine"
-        android:maxLines="10"
-        android:scrollHorizontally="false" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rLayout"
+                    tools:context="com.google.firebase.cs.database.NewPostActivity"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                <EditText
+                    android:id="@+id/field_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:hint="Equipment Name"
+                    android:maxLines="1" />
+
+                <EditText
+                    android:id="@+id/field_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/field_title"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Equipment Model"
+                    android:inputType="textMultiLine"
+                    android:maxLines="10"
+                    android:scrollHorizontally="false" />
+
+                <EditText
+                    android:id="@+id/location_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="location"
+                    android:maxLines="1"
+                    android:layout_marginTop="7dp"
+                    android:layout_below="@+id/serial_txt"
+                    android:layout_alignRight="@+id/serial_txt"
+                    android:layout_alignEnd="@+id/serial_txt"
+                    android:layout_alignLeft="@+id/serial_txt"
+                    android:layout_alignStart="@+id/serial_txt" />
+
+                <EditText
+                    android:id="@+id/serial_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Serial Number"
+                    android:maxLines="1"
+                    android:layout_below="@+id/field_body"
+                    android:layout_alignLeft="@+id/field_body"
+                    android:layout_alignStart="@+id/field_body"
+                    android:layout_alignRight="@+id/field_body"
+                    android:layout_alignEnd="@+id/field_body" />
+
+                <Button
+                    android:text="Next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="214dp"
+                    android:onClick="nextView"
+                    android:id="@+id/button5" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rLayout2"
+                    tools:context="com.google.firebase.cs.database.NewPostActivity"
+                    android:layout_marginTop="280dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                    <EditText
+                        android:id="@+id/tTitle1_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:hint="Equipment Name"
+                        android:maxLines="1" />
+
+                    <EditText
+                        android:id="@+id/tMake1_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tTitle1_field"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Equipment Model"
+                        android:inputType="textMultiLine"
+                        android:maxLines="10"
+                        android:scrollHorizontally="false" />
+
+
+                    <EditText
+                        android:id="@+id/tModel1_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="location"
+                        android:maxLines="1"
+                        android:layout_marginTop="7dp"
+                        android:layout_below="@+id/tMake1_field"
+                        android:layout_alignRight="@+id/tMake1_field"
+                        android:layout_alignEnd="@+id/tMake1_field"
+                        android:layout_alignLeft="@+id/tMake1_field"
+                        android:layout_alignStart="@+id/tMake1_field" />
+
+                    <EditText
+                        android:id="@+id/tSerial1_field"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Serial Number"
+                        android:maxLines="1"
+                        android:layout_below="@+id/tModel1_field"
+                        android:layout_alignLeft="@+id/tModel1_field"
+                        android:layout_alignStart="@+id/tModel1_field"
+                        android:layout_alignRight="@+id/tModel1_field"
+                        android:layout_alignEnd="@+id/tModel1_field" />
+
+                    <Button
+                        android:text="Next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="214dp"
+                        android:id="@+id/button6" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rLayout3"
+                    tools:context="com.google.firebase.cs.database.NewPostActivity"
+                    android:layout_marginTop="280dp"
+                    android:visibility="gone"
+                    android:layout_alignParentTop="true"
+                    android:layout_below="@+id/rLayout2"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                    <EditText
+                        android:id="@+id/tTitle2_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:hint="Equipment Name"
+                        android:maxLines="1" />
+
+                    <EditText
+                        android:id="@+id/tMake2_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tTitle2_field"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Equipment Model"
+                        android:inputType="textMultiLine"
+                        android:maxLines="10"
+                        android:scrollHorizontally="false" />
+
+
+                    <EditText
+                        android:id="@+id/tModel2_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="location"
+                        android:maxLines="1"
+                        android:layout_marginTop="7dp"
+                        android:layout_below="@+id/tMake2_field"
+                        android:layout_alignRight="@+id/tMake2_field"
+                        android:layout_alignEnd="@+id/tMake2_field"
+                        android:layout_alignLeft="@+id/tMake2_field"
+                        android:layout_alignStart="@+id/tMake2_field" />
+
+                    <EditText
+                        android:id="@+id/tSerial2_field"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Serial Number"
+                        android:maxLines="1"
+                        android:layout_below="@+id/tModel2_field"
+                        android:layout_alignLeft="@+id/tModel2_field"
+                        android:layout_alignStart="@+id/tModel2_field"
+                        android:layout_alignRight="@+id/tModel2_field"
+                        android:layout_alignEnd="@+id/tModel2_field" />
+
+                    <Button
+                        android:text="Next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="214dp"
+                        android:id="@+id/button7" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rLayout4"
+                    tools:context="com.google.firebase.cs.database.NewPostActivity"
+                    android:layout_marginTop="280dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_below="@+id/rLayout3"
+                    android:visibility="gone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                    <EditText
+                        android:id="@+id/tTitle3_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:hint="Equipment Name"
+                        android:maxLines="1" />
+
+                    <EditText
+                        android:id="@+id/tMake3_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tTitle3_field"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Equipment Model"
+                        android:inputType="textMultiLine"
+                        android:maxLines="10"
+                        android:scrollHorizontally="false" />
+
+
+                    <EditText
+                        android:id="@+id/tModel3_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="location"
+                        android:maxLines="1"
+                        android:layout_marginTop="7dp"
+                        android:layout_below="@+id/tMake3_field"
+                        android:layout_alignRight="@+id/tMake3_field"
+                        android:layout_alignEnd="@+id/tMake3_field"
+                        android:layout_alignLeft="@+id/tMake3_field"
+                        android:layout_alignStart="@+id/tMake3_field" />
+
+                    <EditText
+                        android:id="@+id/tSerial3_field"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Serial Number"
+                        android:maxLines="1"
+                        android:layout_below="@+id/tModel3_field"
+                        android:layout_alignLeft="@+id/tModel3_field"
+                        android:layout_alignStart="@+id/tModel3_field"
+                        android:layout_alignRight="@+id/tModel3_field"
+                        android:layout_alignEnd="@+id/tModel3_field" />
+
+                    <Button
+                        android:text="Next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="214dp"
+                        android:id="@+id/button8" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_submit_post"
@@ -39,30 +315,4 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_navigation_check_24"/>
 
-    <EditText
-        android:id="@+id/location_txt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="location"
-        android:maxLines="1"
-        android:layout_marginTop="7dp"
-        android:layout_below="@+id/serial_txt"
-        android:layout_alignRight="@+id/serial_txt"
-        android:layout_alignEnd="@+id/serial_txt"
-        android:layout_alignLeft="@+id/serial_txt"
-        android:layout_alignStart="@+id/serial_txt" />
-
-    <EditText
-        android:id="@+id/serial_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Serial Number"
-        android:maxLines="1"
-        android:layout_below="@+id/field_body"
-        android:layout_alignLeft="@+id/field_body"
-        android:layout_alignStart="@+id/field_body"
-        android:layout_alignRight="@+id/field_body"
-        android:layout_alignEnd="@+id/field_body" />
-
-</RelativeLayout>
+    </RelativeLayout>
