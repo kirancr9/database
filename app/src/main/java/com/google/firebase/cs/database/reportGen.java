@@ -26,22 +26,39 @@ import java.io.FileOutputStream;
 public class reportGen extends AppCompatActivity {
 
     private String demo="now";
-    private EditText edSE;
-    private EditText edE;
-    private EditText edTO;
-    private EditText edEC;
-    private EditText edSEC;
-    private EditText edTOC;
+    static EditText edSE;
+    static EditText edE;
+    static EditText edTO;
+    static EditText edEC;
+    static EditText edSEC;
+    static EditText edTOC;
+
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_gen);
+
+
+
     }
 
 
     public void onGen(View v){
+
+        edSE = (EditText) findViewById(R.id.edV1);
+        edE = (EditText) findViewById(R.id.edV2);
+        edTO = (EditText) findViewById(R.id.edV3);
+        edEC = (EditText) findViewById(R.id.edV4);
+        edSEC = (EditText) findViewById(R.id.edV5);
+        edTOC = (EditText) findViewById(R.id.edV6);
+
+
+
+
 
         String FILE = Environment.getExternalStorageDirectory().toString()
                 + "/PDF/" + "What.pdf";
@@ -221,21 +238,43 @@ public class reportGen extends AppCompatActivity {
      * @throws DocumentException
      */
     public static PdfPTable createTable2() throws DocumentException {
-        PdfPTable table = new PdfPTable(3);
-        table.setTotalWidth(288);
-        table.setLockedWidth(true);
-        table.setWidths(new float[]{2, 1, 1});
+        PdfPTable table = new PdfPTable(6);
+        table.setWidthPercentage(480 / 5.23f);
+        table.setWidths(new int[]{1, 1, 1,1,1,1});
         PdfPCell cell;
-        cell = new PdfPCell(new Phrase("Table 2"));
-        cell.setColspan(3);
+        cell = new PdfPCell(new Phrase("Sl No"));
         table.addCell(cell);
-        cell = new PdfPCell(new Phrase("Cell with rowspan 2"));
-        cell.setRowspan(2);
+        cell = new PdfPCell(new Phrase("Test Equipment"));
         table.addCell(cell);
-        table.addCell("row 1; cell 1");
-        table.addCell("row 1; cell 2");
-        table.addCell("row 2; cell 1");
-        table.addCell("row 2; cell 2");
+        cell = new PdfPCell(new Phrase("Make / Model"));
+        table.addCell(cell);
+        cell = new PdfPCell(new Phrase("Serial No"));
+        table.addCell(cell);
+        cell = new PdfPCell(new Phrase("Certificate no"));
+        table.addCell(cell);
+        cell = new PdfPCell(new Phrase("Due Date"));
+        table.addCell(cell);
+        table.addCell("1");
+        table.addCell("Defibrillator");
+        table.addCell("Fluke / Impulse 7000DP");
+        table.addCell("2440051");
+        table.addCell("1606591-IMPULSE 7000DP-2440051-1");
+        table.addCell("22-06-2017");
+
+        table.addCell("2");
+        table.addCell("Thermo Hygrometer");
+        table.addCell("CTH");
+        table.addCell("288");
+        table.addCell("ACS/TH/16-17/10510-01");
+        table.addCell("14-06-2017");
+
+        table.addCell("3");
+        table.addCell("Defibrillator");
+        table.addCell("Fluke / Impulse 7000DP");
+        table.addCell("2440051");
+        table.addCell("1606591-IMPULSE 7000DP-2440051-1");
+        table.addCell("22-06-2017");
+
         return table;
     }
 
@@ -245,7 +284,16 @@ public class reportGen extends AppCompatActivity {
      * @throws DocumentException
      */
     public static PdfPTable createTable3() throws DocumentException {
-        PdfPTable table = new PdfPTable(new float[]{ 1, 1, 1, 1, 1, 1 });
+
+        final String edse = edSE.getText().toString();
+        final String ede = edE.getText().toString();
+        final String edto = edTO.getText().toString();
+        final String edec = edEC.getText().toString();
+        final String edsec = edSEC.getText().toString();
+        final String edtoc = edTOC.getText().toString();
+
+        PdfPTable table = new PdfPTable(6);
+        table.setWidths(new int[]{1, 1, 1,1,1,1});
         table.setWidthPercentage(480 / 5.23f);
         PdfPCell cell;
         cell = new PdfPCell(new Phrase("Set Energy"));
@@ -256,14 +304,25 @@ public class reportGen extends AppCompatActivity {
         table.addCell("ECG");
         table.addCell("Set ECG");
         table.addCell("Tolerance");
-        table.addCell("row 3; cell 1");
-        table.addCell("row 3; cell 2");
-        table.addCell("row 4; cell 1");
-        table.addCell("row 4; cell 2");
-        table.addCell("row 5; cell 1");
-        table.addCell("row 5; cell 2");
-        table.addCell("row 6; cell 1");
-        table.addCell("row 6; cell 2");
+        table.addCell(edse);
+        table.addCell(ede);
+        table.addCell(edto);
+        table.addCell(edec);
+        table.addCell(edsec);
+        table.addCell(edtoc);
+        table.addCell(cell);
+        cell = new PdfPCell(new Phrase("09/07/2016"));
+        table.addCell(cell);
+        cell = new PdfPCell(new Phrase("09/07/2016"));
+        table.addCell(cell);
+        cell = new PdfPCell(new Phrase("09/07/2016"));
+        table.addCell(cell);
+        cell = new PdfPCell(new Phrase("09/07/2016"));
+        table.addCell(cell);
+        cell = new PdfPCell(new Phrase("09/07/2016"));
+        table.addCell(cell);
+        cell = new PdfPCell(new Phrase("09/07/2016"));
+        table.addCell(cell);
 
         return table;
     }

@@ -42,7 +42,6 @@ public class UpdateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_update);
         edmodel = (EditText) findViewById(R.id.edmodel);
         edtitle = (EditText) findViewById(R.id.edtitle);
-        btnupdate = (Button) findViewById(R.id.button5);
 
         edmodel.setText(PostKey);
 

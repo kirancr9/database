@@ -31,7 +31,6 @@ public class NewPostActivity extends BaseActivity {
     // [START declare_database_ref]
     private DatabaseReference mDatabase;
     // [END declare_database_ref]
-    private Button mSubmitB;
     private EditText mTitleField;
     private EditText mBodyField;
     private EditText mlocationTxt;
@@ -82,7 +81,6 @@ public class NewPostActivity extends BaseActivity {
         mlocationTxt = (EditText) findViewById(R.id.location_txt);
         mSerialTxt = (EditText) findViewById(R.id.serial_txt);
         mSubmitButton = (FloatingActionButton) findViewById(R.id.fab_submit_post);
-        mSubmitB = (Button) findViewById(R.id.button5);
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,12 +88,12 @@ public class NewPostActivity extends BaseActivity {
             }
         });
 
-        mSubmitB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                submitPost();
-            }
-        });
+       // mSubmitB.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        submitPost();
+        //    }
+      //  });
     }
 
     private void submitPost() {

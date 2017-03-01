@@ -14,7 +14,7 @@
         android:text="SUBMIT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
+        android:id="@+id/btsubV"
         android:onClick="onGen"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
@@ -24,52 +24,50 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
+        android:layout_below="@+id/edV1"
+        android:layout_alignLeft="@+id/edV1"
+        android:layout_alignStart="@+id/edV1"
         android:layout_marginTop="17dp"
-        android:id="@+id/editText4"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_alignEnd="@+id/editText3" />
+        android:id="@+id/edV2"
+        android:layout_alignRight="@+id/edV1"
+        android:layout_alignEnd="@+id/edV1" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText5"
-        android:layout_below="@+id/editText4"
-        android:layout_alignLeft="@+id/editText4"
-        android:layout_alignStart="@+id/editText4"
+        android:id="@+id/edV3"
+        android:layout_below="@+id/edV2"
+        android:layout_alignLeft="@+id/edV2"
+        android:layout_alignStart="@+id/edV2"
         android:layout_marginTop="13dp"
-        android:layout_alignRight="@+id/editText4"
-        android:layout_alignEnd="@+id/editText4" />
+        android:layout_alignRight="@+id/edV2"
+        android:layout_alignEnd="@+id/edV2" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:layout_below="@+id/editText6"
-        android:layout_alignLeft="@+id/editText6"
-        android:layout_alignStart="@+id/editText6"
+        android:layout_below="@+id/edV4"
+        android:layout_alignLeft="@+id/edV4"
+        android:layout_alignStart="@+id/edV4"
         android:layout_marginTop="13dp"
-        android:id="@+id/editText7"
-        android:layout_alignRight="@+id/editText6"
-        android:layout_alignEnd="@+id/editText6" />
+        android:id="@+id/edV5"
+        android:layout_alignRight="@+id/edV4"
+        android:layout_alignEnd="@+id/edV4" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText8"
+        android:id="@+id/edV6"
         android:layout_marginTop="12dp"
-        android:layout_below="@+id/editText7"
-        android:layout_alignLeft="@+id/editText7"
-        android:layout_alignStart="@+id/editText7"
-        android:layout_alignRight="@+id/editText7"
-        android:layout_alignEnd="@+id/editText7" />
+        android:layout_below="@+id/edV5"
+        android:layout_alignLeft="@+id/edV5"
+        android:layout_alignStart="@+id/edV5" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -77,12 +75,14 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:layout_marginTop="15dp"
-        android:id="@+id/editText6"
-        android:layout_below="@+id/editText5"
-        android:layout_alignLeft="@+id/editText5"
-        android:layout_alignStart="@+id/editText5"
-        android:layout_alignRight="@+id/editText5"
-        android:layout_alignEnd="@+id/editText5" />
+        android:id="@+id/edV4"
+        android:layout_below="@+id/edV3"
+        android:layout_alignLeft="@+id/edV3"
+        android:layout_alignStart="@+id/edV3"
+        android:layout_alignRight="@+id/edV3"
+        android:layout_alignEnd="@+id/edV3"
+        android:selectAllOnFocus="false"
+        android:maxLines="1" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -90,16 +90,15 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:layout_marginTop="35dp"
-        android:id="@+id/editText3"
+        android:id="@+id/edV1"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/button3"
-        android:layout_toEndOf="@+id/button3" />
+        android:layout_toRightOf="@+id/btsubV" />
 
     <TextView
         android:text="Tolerance "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText5"
+        android:layout_alignBottom="@+id/edV3"
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3"
         android:id="@+id/textView4" />
@@ -111,7 +110,7 @@
         android:layout_marginLeft="28dp"
         android:layout_marginStart="28dp"
         android:id="@+id/textView2"
-        android:layout_above="@+id/editText4"
+        android:layout_above="@+id/edV2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         />
@@ -121,25 +120,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
-        android:layout_alignBottom="@+id/editText4"
+        android:layout_alignBottom="@+id/edV2"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2" />
-
-    <TextView
-        android:text="ECG"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4" />
 
     <TextView
         android:text="Set ECG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView6"
-        android:layout_above="@+id/editText8"
+        android:layout_above="@+id/edV6"
         android:layout_alignLeft="@+id/textView5"
         android:layout_alignStart="@+id/textView5" />
 
@@ -148,8 +138,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView7"
-        android:layout_alignBottom="@+id/editText8"
+        android:layout_alignBottom="@+id/edV6"
         android:layout_alignLeft="@+id/textView6"
         android:layout_alignStart="@+id/textView6" />
+
+    <TextView
+        android:text="ECG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_above="@+id/edV5"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <TextView
+        android:text="Enter Values"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView8"
+        android:textStyle="normal|bold"
+        android:textSize="18sp" />
 
 </RelativeLayout>
