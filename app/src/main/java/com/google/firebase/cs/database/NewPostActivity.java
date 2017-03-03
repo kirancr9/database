@@ -1,5 +1,6 @@
 package com.google.firebase.cs.database;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.text.TextUtils;
@@ -211,6 +212,16 @@ public class NewPostActivity extends BaseActivity {
     {
         RelativeLayout one = (RelativeLayout) findViewById(R.id.rLayout);
         one.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        //do whatever you want the 'Back' button to do
+        //as an example the 'Back' button is set to start a new Activity named 'NewActivity'
+        this.startActivity(new Intent(NewPostActivity.this,DrawerActivity.class));
+        finish();
+        return;
     }
 
     private void setEditingEnabled(boolean enabled) {

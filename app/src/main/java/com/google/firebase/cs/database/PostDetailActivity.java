@@ -27,6 +27,13 @@ public class PostDetailActivity extends BaseActivity {
     private TextView mTitleView;
     private TextView mBodyView;
     private TextView demoTxt;
+    private TextView eserialview;
+    private TextView ttitletxt1;
+    private TextView tmaketxt1;
+    private TextView tserialtxt1;
+    private TextView tmodeltxt1;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,10 @@ public class PostDetailActivity extends BaseActivity {
         mTitleView = (TextView) findViewById(R.id.post_title);
         mBodyView = (TextView) findViewById(R.id.post_body);
         demoTxt = (TextView) findViewById(R.id.post_location);
+        eserialview= (TextView) findViewById(R.id.eserialview);
+        ttitletxt1 = (TextView) findViewById(R.id.ttitletxt1);
+        tserialtxt1= (TextView) findViewById(R.id.tserialtxt1);
+        tmodeltxt1= (TextView)  findViewById(R.id.tmodeltxt1);
 
 
     }
@@ -75,6 +86,10 @@ public class PostDetailActivity extends BaseActivity {
                     mTitleView.setText(post.title);
                     mBodyView.setText(post.body);
                     demoTxt.setText(post.location);
+                    eserialview.setText(post.serial);
+                    ttitletxt1.setText(post.ttitle1);
+                    tserialtxt1.setText(post.tserial1);
+                    tmodeltxt1.setText(post.tmodel1);
                 }
                 else{
                     finish();

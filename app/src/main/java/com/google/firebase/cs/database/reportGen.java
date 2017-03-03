@@ -1,5 +1,6 @@
 package com.google.firebase.cs.database;
 
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class reportGen extends AppCompatActivity {
 
@@ -46,6 +49,16 @@ public class reportGen extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        //do whatever you want the 'Back' button to do
+        //as an example the 'Back' button is set to start a new Activity named 'NewActivity'
+        this.startActivity(new Intent(reportGen.this,DrawerActivity.class));
+        finish();
+        return;
+    }
+
 
     public void onGen(View v){
 
@@ -58,10 +71,13 @@ public class reportGen extends AppCompatActivity {
 
 
 
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+        Date now = new Date();
+        String fileName = "Cert" + formatter.format(now) + ".pdf";
 
 
         String FILE = Environment.getExternalStorageDirectory().toString()
-                + "/PDF/" + "What.pdf";
+                + "/PDF/" + fileName;
 
         // Add Permission into Manifest.xml
         // <uses-permission
